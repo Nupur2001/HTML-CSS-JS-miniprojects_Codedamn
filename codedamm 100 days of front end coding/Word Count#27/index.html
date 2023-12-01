@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Word Count Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@300;400;500;700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    body {
+        /* background-color: rgb(70, 187, 109); */
+        /* background-color:linear-gradient(90deg, rgba(70, 187, 109, 1) 0%, rgba(76, 175, 80, 1) 50%, rgba(70, 187, 109, 1) 100%); */
+        font-family: 'Nunito Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .card {
+        /* backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%); */
+        /* background-color: #6DC06F; */
+        /* background-color: rgba(42, 175, 51, 0.5); */
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        align-items: center;
+    }
+
+    button {
+        margin-left: 90px;
+        margin-top: 15px;
+        background-color: #45c14d;
+        /* background-color: #4caf50; */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #text {
+        line-height: 3;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 600px) {
+        .card {
+            width: 90%;
+            /* Adjust width for smaller screens */
+        }
+    }
+</style>
+
+<body>
+    <div class="card">
+
+        <textarea id="inputText"></textarea>
+        <button id="countButton">Count Words</button>
+        <div id="text">
+            Total Words:
+            <span id="wordCount">0</span>
+        </div>
+    </div>
+
+    <script>
+        // Add your JavaScript here
+        document.getElementById('countButton').addEventListener('click', countWords);
+
+        function countWords() {
+            // Get the input text from the textarea
+            var inputText = document.getElementById('inputText').value;
+            var words = inputText.match(/\S+/g);
+            var wordCount = words ? words.length : 0;
+            document.getElementById('wordCount').innerText = wordCount;
+        };
+
+
+
+    </script>
+</body>
+
+</html>
